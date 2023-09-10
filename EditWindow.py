@@ -1,15 +1,12 @@
-from PyQt5.QtWidgets import *
-
-import Question
+from  PyQt5.QtWidgets import *
 
 
-def menuWind():
+def editWindow():
     window = QDialog()
 
-    addBtn = QPushButton("Добавити")
+    editBtn = QPushButton("Редагувати")
 
-
-    questLbl = QLabel("Питання")
+    questLbl = QLabel("Редагувати питання")
     questLbl1 = QLabel("Правильна відповідь")
     questLbl2 = QLabel("Неправильна відповідь")
     questLbl3 = QLabel("Неправильна відповідь")
@@ -21,8 +18,6 @@ def menuWind():
     questEdit2 = QLineEdit()
     questEdit3 = QLineEdit()
     questEdit4 = QLineEdit()
-
-
 
     mainLine = QVBoxLayout()
 
@@ -55,8 +50,7 @@ def menuWind():
     mainLine.addLayout(h5)
     mainLine.addLayout(h6)
 
-    h6.addWidget(addBtn)
-
+    h6.addWidget(editBtn)
 
     def addFunc():
         Question.qeust.append(
@@ -69,7 +63,14 @@ def menuWind():
             }
         )
 
-    addBtn.clicked.connect(addFunc)
     window.setLayout(mainLine)
+
     window.show()
+
+                   
+
     window.exec()
+
+
+
+

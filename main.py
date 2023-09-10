@@ -1,6 +1,7 @@
 import random
 from PyQt5.QtWidgets import *
 
+import EditWindow
 import MenuWindow
 import Question
 
@@ -15,6 +16,7 @@ timeLbl = QLabel("хвилин")
 questLbl = QLabel("Питання")
 answerBtn = QPushButton("Відповісти")
 nextQuestBtn = QPushButton("Наступне питання")
+editQuestBtn = QPushButton("Редагувати")
 nextQuestBtn.hide()
 firstLine = QHBoxLayout()
 firstLine.addWidget(menuBtn)
@@ -45,6 +47,7 @@ answersGroup.setLayout(answersLine)
 mainLine.addWidget(answersGroup)
 mainLine.addWidget(answerBtn)
 mainLine.addWidget(nextQuestBtn)
+mainLine.addWidget(editQuestBtn)
 
 def setQuest():
     random.shuffle(answers)
@@ -81,9 +84,17 @@ def nextFunc():
     setQuest()
 
 
+def editQuestFunc():
+    window.hide()
+    EditWindow.editWindow()
+    window.show()
+
+    setQuest()
+
 answerBtn.clicked.connect(showResult)
 nextQuestBtn.clicked.connect(nextFunc)
 menuBtn.clicked.connect(MenuWindow.menuWind)
+editQuestBtn.clicked.connect(editQuestFunc)
 
 window.setLayout(mainLine)
 window.show()
