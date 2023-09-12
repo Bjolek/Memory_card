@@ -87,6 +87,7 @@ def nextFunc():
 def editQuestFunc():
     window.hide()
     EditWindow.editWindow()
+    
     window.show()
 
     setQuest()

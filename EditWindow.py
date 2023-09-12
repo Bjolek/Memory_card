@@ -1,6 +1,6 @@
 from  PyQt5.QtWidgets import *
 
-
+import Question
 def editWindow():
     window = QDialog()
 
@@ -52,7 +52,7 @@ def editWindow():
 
     h6.addWidget(editBtn)
 
-    def addFunc():
+    def addEditFunc():
         Question.qeust.append(
             {
                 "питання": questEdit.text(),
@@ -63,12 +63,10 @@ def editWindow():
             }
         )
 
+
+    editBtn.clicked.connect(addEditFunc)
     window.setLayout(mainLine)
-
     window.show()
-
-                   
-
     window.exec()
 
 
