@@ -6,6 +6,37 @@ import MenuWindow
 import Question
 
 app = QApplication([])
+app.setStyleSheet("""
+    QWidget {
+        background: #337CCF;
+    }
+
+    QPushButton
+    {
+        background: #FFC436;
+        border-width: 7px;
+        border-color: #191D88;
+        border-style: inset;
+        font-family: Impact;
+    }
+    QLabel {
+        font-family: Impact;
+    }
+    QGroupBox {
+        font-family: Impact;
+    }
+    QRadioButton {
+        font-family: Impact;
+    }
+    QGroupBox {
+         background: #FFC436;
+
+    }
+    QRadioButton {
+         background: #FFC436;
+
+    }
+""")
 window = QWidget()
 window.resize(500, 500)
 mainLine = QVBoxLayout()

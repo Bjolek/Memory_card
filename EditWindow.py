@@ -53,16 +53,16 @@ def editWindow():
     h6.addWidget(editBtn)
 
     def addEditFunc():
-        Question.qeust.append(
-            {
+        Question.qeust[Question.currentQuest] = {
+
                 "питання": questEdit.text(),
-                "Правильна відповідь": questEdit1.text() ,
+                "Правильна відповідь": questEdit1.text(),
                 "не правильна1": questEdit2.text(),
                 "не правильна2": questEdit3.text(),
                 "не правильна3": questEdit4.text()
             }
-        )
 
+    window.close()
 
     editBtn.clicked.connect(addEditFunc)
     window.setLayout(mainLine)
